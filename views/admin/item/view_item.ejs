@@ -1,9 +1,9 @@
-<%- include('partials/header.ejs') %>
+<%- include('../../partials/header.ejs') %>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-   <%- include('partials/sidebar.ejs')%>
+   <%- include('../../partials/sidebar.ejs')%>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -11,20 +11,30 @@
       <!-- Main Content -->
       <div id="content">
 
-     <%- include('partials/navbar.ejs')%>
+     <%- include('../../partials/navbar.ejs')%>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">Item</h1>
+             <!-- DataTales Example -->
+             <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              </div>
+              
+              <%- include('./table.ejs')%>
+              
+          </div>
+          <!-- End Page Heading -->
 
         </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
-      <%- include('partials/footer.ejs')%>
+      <%- include('../../partials/footer.ejs')%>
 
 
 
@@ -59,7 +69,7 @@
   </div>
 
 
-<%- include('partials/js.ejs')%>
+<%- include('../../partials/js.ejs')%>
 
 
 
