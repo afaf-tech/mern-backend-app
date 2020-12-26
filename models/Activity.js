@@ -10,9 +10,12 @@ const AcitivitySchema = new mongoose.Schema({
         type: String,
         require:true
     },
+    imageUrl: {
+        type: String,
+        required: true
+    },
     isPopular: {
         type: Boolean,
-        required:true
     },
     itemId:{
         type:ObjectId,
