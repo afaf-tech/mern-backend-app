@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const {ObjectId} = mongoose.Schema;
 
 const AcitivitySchema = new mongoose.Schema({
     name: {
@@ -13,6 +14,10 @@ const AcitivitySchema = new mongoose.Schema({
         type: Boolean,
         required:true
     },
+    itemId:{
+        type:ObjectId,
+        ref: 'Item'
+    }
 })
 
 module.exports = mongoose.model('Activity', AcitivitySchema)

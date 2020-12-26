@@ -13,6 +13,10 @@ const BankSchema = new mongoose.Schema({
         type: String,
         required:true
     },
+    imageUrl:{
+        type:String,
+        required:true
+    }
 })
 
 module.exports = mongoose.model('Bank', BankSchema)

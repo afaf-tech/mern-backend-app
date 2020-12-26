@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const {ObjectId} = mongoose.Schema;
 
 const FeatureSchema = new mongoose.Schema({
     name: {
@@ -13,6 +14,10 @@ const FeatureSchema = new mongoose.Schema({
         type: String,
         required:true
     },
+    itemId:{
+        type:ObjectId,
+        ref: 'Item'
+    }
 })
 
 module.exports = mongoose.model('Feature', FeatureSchema)
