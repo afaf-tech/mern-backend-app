@@ -9,7 +9,8 @@ var flash = require('connect-flash');
 //import mongoose
 const mongoose =require('mongoose');
 
-mongoose.connect('mongodb://173.82.243.249:27017/db_staycation_v2', {
+// mongoose.connect('mongodb://173.82.243.249:27017/db_staycation_v2', {
+mongoose.connect('mongodb://localhost:27017/db_staycation_v2', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
