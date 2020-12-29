@@ -10,7 +10,7 @@ var flash = require('connect-flash');
 const mongoose =require('mongoose');
 
 // mongoose.connect('mongodb://173.82.243.249:27017/db_staycation_v2', {
-mongoose.connect('mongodb://localhost:27017/db_staycation_v2', {
+mongoose.connect('mongodb+srv://afaf-tech-staycation:hulahup21@cluster0.zxcyw.mongodb.net/db_staycation?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
