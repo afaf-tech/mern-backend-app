@@ -28,9 +28,9 @@ module.exports = {
                         perDocumentLimit: 1,
                     },
             });
-            const traveler = await Treasure.find();
-            const treasure = await Treasure.find();
-            const city = await Item.find();
+            const traveler = await Treasure.find().count();
+            const treasure = await Treasure.find().count();
+            const city = await Item.find().count();
 
             for (let i = 0; i < category.length; i++) {
                 for (let x = 0; x < category[i].itemId.length; x++) {
@@ -56,9 +56,9 @@ module.exports = {
 
             res.status(200).json({
                 hero : {
-                    travelers : traveler.length,
-                    treasures : treasure.length,
-                    cities : city.length,
+                    travelers : traveler,
+                    treasures : treasure,
+                    cities : city,
                 },
                 mostPicked,
                 categories : category,

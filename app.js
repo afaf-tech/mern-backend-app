@@ -9,8 +9,8 @@ var flash = require('connect-flash');
 //import mongoose
 const mongoose =require('mongoose');
 
-// mongoose.connect('mongodb://173.82.243.249:27017/db_staycation_v2', {
-mongoose.connect('mongodb+srv://afaf-tech-staycation:hulahup21@cluster0.zxcyw.mongodb.net/db_staycation?retryWrites=true&w=majority', {
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
