@@ -5,6 +5,10 @@ const UsersSchema = new mongoose.Schema({
         type: String,
         require:true
     },
+    email: {
+        type: String,
+        require:true
+    },
     password: {
         type: String,
         require:true
@@ -19,5 +23,14 @@ UsersSchema.pre('save', async function(next){
         user.password= await brcypt.hash(user.password, 8);
     }
 })
+UsersSchema.path('email').validate(function(value, done) {
+    this.model('User').count({ email: value }, function(err, count) {
+        if (err) {
+            return done(err);
+        } 
+        // If `count` is greater than zero, "invalidate"
+        done(!count);
+    });
+}, 'Email already exists');
 
 module.exports = mongoose.model('Users', UsersSchema)
