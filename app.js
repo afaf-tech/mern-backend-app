@@ -43,7 +43,7 @@ const allowlist = ['http://127.0.0.1:8887', 'https://afaf-tech.github.io/portfol
     const corsOptionsDelegate = (req, callback) => {
     let corsOptions;
 
-    let isDomainAllowed = whitelist.indexOf(req.header('Origin')) !== -1;
+    let isDomainAllowed = allowlist.indexOf(req.header('Origin')) !== -1;
     let isExtensionAllowed = req.path.endsWith('.jpg');
 
     if (isDomainAllowed && isExtensionAllowed) {
