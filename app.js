@@ -6,6 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var flash = require('connect-flash');
+var cors = require("cors");
 //import mongoose
 const mongoose =require('mongoose');
 
@@ -37,7 +38,25 @@ app.use(session({
   saveUninitialized: true,
   cookie: {maxAge : 60000}
 }));
+const allowlist = ['http://127.0.0.1:8887', 'https://afaf-tech.github.io/portfolio/'];
 
+    const corsOptionsDelegate = (req, callback) => {
+    let corsOptions;
+
+    let isDomainAllowed = whitelist.indexOf(req.header('Origin')) !== -1;
+    let isExtensionAllowed = req.path.endsWith('.jpg');
+
+    if (isDomainAllowed && isExtensionAllowed) {
+        // Enable CORS for this request
+        corsOptions = { origin: true }
+    } else {
+        // Disable CORS for this request
+        corsOptions = { origin: false }
+    }
+    callback(null, corsOptions)
+}
+
+app.use(cors(corsOptionsDelegate));
 app.use(flash());
 
 app.use(logger('dev'));
